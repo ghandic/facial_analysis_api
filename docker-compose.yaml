@@ -1,0 +1,14 @@
+version: "2"
+services:
+  opencv:
+    build: .
+    image: challisa/opencv
+    container_name: opencv-wordpress
+    ports:
+      - "8686:8686"
+    volumes:
+      - ./src:/app/src
+    stdin_open: true
+    tty: true
+    environment:
+      - PORT=8686
